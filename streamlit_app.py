@@ -2,22 +2,59 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 
-# Judul
-st.title("🌀 Penentuan Panjang Gelombang dan Kurva Kalibrasi pada Spektrofotometer UV-Vis")
+# Mengatur tema Streamlit dengan dominasi warna ungu sangat gelap
+st.set_page_config(
+    page_title="Spektrofotometer UV-Vis",
+    page_icon="🌟",
+    layout="centered",
+    initial_sidebar_state="auto"
+)
 
-# Konten
-st.write("Pada spektrofotometer UV-Vis, panjang gelombang dan kurva kalibrasi merupakan dua parameter yang sangat penting dalam pengukuran absorbansi.")
-st.write("Dengan menggunakan spektrofotometer UV-Vis, kita dapat mengukur absorbansi suatu sampel pada panjang gelombang tertentu.")
+# Custom CSS untuk mengatur warna dan tampilan
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #1a001f; /* Warna ungu sangat gelap */
+        color: #FFFFFF; /* Warna teks putih */
+    }
+    .stTitle {
+        color: #FFFFFF; /* Warna judul putih */
+    }
+    .stButton button {
+        background-color: #000000; /* Warna tombol hitam */
+        color: #FFFFFF; /* Warna teks tombol putih */
+    }
+    .stSelectbox .st-cj {
+        color: #FFFFFF; /* Warna teks selectbox putih */
+    }
+    .stSelectbox .st-br {
+        background-color: transparent; /* Warna background selectbox transparan */
+    }
+    .stTextArea textarea {
+        background-color: #000000; /* Warna background textarea hitam */
+        color: #FFFFFF; /* Warna teks textarea putih */
+    }
+    .jawaban {
+        color: #FFD700; /* Warna jawaban signifikan kuning emas */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# Judul aplikasi
+st.title("🌀 Penentuan Panjang Gelombang dan Kurva Kalibrasi pada Spektrofotometer UV-Vis 🌟")
 
 # Opsi
 opsi = st.selectbox("Pilih opsi:", ["Tentang Kami", "Informasi Lanjut", "Penentuan Panjang Gelombang", "Penentuan Kurva Kalibrasi"])
 
 # Konten opsi pertama
 if opsi == "Tentang Kami":
-    st.write("Tentang Kami:")
+    st.write("### Tentang Kami:")
     st.write("Aplikasi ini berguna untuk menentukan panjang gelombang dan kurva kalibrasi pada spektrofotometer UV-Vis.")
     st.write("Aplikasi ini juga merupakan hasil proyek kami dalam mata kuliah yang dijalankan. Kami berterima kasih atas pengertiannya.")
-    st.write("Anggota Kelompok:")
+    st.write("### Anggota Kelompok:")
     st.write("1. Fajar Putra Andika")
     st.write("2. Inka Novebi Br Ginting")
     st.write("3. Muhammad Erlan Satriawan")
@@ -27,41 +64,41 @@ if opsi == "Tentang Kami":
 
 # Konten opsi kedua
 if opsi == "Informasi Lanjut":
-    st.write("Informasi Lanjut:")
-    st.write("### Panjang Gelombang")
+    st.write("### Informasi Lanjut:")
+    st.write("#### Panjang Gelombang")
     st.write("Panjang gelombang adalah jarak antara dua titik pada gelombang yang memiliki fase sama. Dalam spektrofotometer UV-Vis, panjang gelombang digunakan untuk mengidentifikasi warna yang dihasilkan oleh suatu senyawa.")
-    st.write("### Kurva Kalibrasi")
+    st.write("#### Kurva Kalibrasi")
     st.write("Kurva kalibrasi adalah grafik yang menunjukkan hubungan antara absorbansi dan konsentrasi suatu senyawa. Kurva kalibrasi digunakan untuk menentukan konsentrasi suatu senyawa berdasarkan absorbansinya.")
-    st.write("Kegunaan kurva kalibrasi adalah untuk:")
+    st.write("##### Kegunaan kurva kalibrasi adalah untuk:")
     st.write("* Menentukan konsentrasi suatu senyawa dalam suatu sampel")
     st.write("* Mengidentifikasi suatu senyawa berdasarkan absorbansinya")
     st.write("* Menentukan kemurnian suatu senyawa")
-    st.write("Kurva kalibrasi dapat kita bayangkan seperti gelombang di atas.Kurva kalibrasi yang bagus akan menunjukkan koefisien korelasi (R²) yang tinggi, yaitu mendekati 1. Hal ini menunjukkan bahwa kurva kalibrasi dapat digunakan untuk menentukan konsentrasi pada suatu sampel dengan akurasi dan presisi yang tinggi")
+    st.write("Kurva kalibrasi dapat kita bayangkan seperti gelombang di atas. Sedangkan untuk emotion, kami berharap Anda merasa puas dengan informasi yang kami berikan.")
 
 # Konten opsi ketiga
 if opsi == "Penentuan Panjang Gelombang":
-    st.write("Penentuan Panjang Gelombang:")
-    warna = st.selectbox("Pilih warna yang diobservasi:", ["Ungu", "Biru", "Hijau-biru", "Hijau", "Kuning-hijau", "Kuning", "Jingga", "Merah"])
-    if warna == "Ungu":
-        st.write("Panjang gelombang yang diabsorpsi: 400-435 nm")
-    elif warna == "Biru":
-        st.write("Panjang gelombang yang diabsorpsi: 435-480 nm")
-    elif warna == "Hijau-biru":
-        st.write("Panjang gelombang yang diabsorpsi: 480-490 nm")
-    elif warna == "Hijau":
-        st.write("Panjang gelombang yang diabsorpsi: 500-560 nm")
-    elif warna == "Kuning-hijau":
-        st.write("Panjang gelombang yang diabsorpsi: 560-580 nm")
+    st.write("### Penentuan Panjang Gelombang:")
+    warna = st.selectbox("Pilih warna yang diobservasi:", ["Kuning-hijau", "Kuning", "Jingga", "Merah", "Ungu", "Biru", "Hijau-Biru", "Biru-Hijau"])
+    if warna == "Kuning-hijau":
+        st.write("<div class='jawaban'>Panjang gelombang yang diabsorpsi: 400-435 nm</div>", unsafe_allow_html=True)
     elif warna == "Kuning":
-        st.write("Panjang gelombang yang diabsorpsi: 580-595 nm")
+        st.write("<div class='jawaban'>Panjang gelombang yang diabsorpsi: 435-480 nm</div>", unsafe_allow_html=True)
     elif warna == "Jingga":
-        st.write("Panjang gelombang yang diabsorpsi: 595-605 nm")
+        st.write("<div class='jawaban'>Panjang gelombang yang diabsorpsi: 480-490 nm</div>", unsafe_allow_html=True)
     elif warna == "Merah":
-        st.write("Panjang gelombang yang diabsorpsi: 605-750 nm")
+        st.write("<div class='jawaban'>Panjang gelombang yang diabsorpsi: 490-560 nm</div>", unsafe_allow_html=True)
+    elif warna == "Ungu":
+        st.write("<div class='jawaban'>Panjang gelombang yang diabsorpsi: 560-580 nm</div>", unsafe_allow_html=True)
+    elif warna == "Biru":
+        st.write("<div class='jawaban'>Panjang gelombang yang diabsorpsi: 580-595 nm</div>", unsafe_allow_html=True)
+    elif warna == "Hijau-Biru":
+        st.write("<div class='jawaban'>Panjang gelombang yang diabsorpsi: 595-605 nm</div>", unsafe_allow_html=True)
+    elif warna == "Biru-Hijau":
+        st.write("<div class='jawaban'>Panjang gelombang yang diabsorpsi: 605-750 nm</div>", unsafe_allow_html=True)
 
 # Konten opsi keempat
 if opsi == "Penentuan Kurva Kalibrasi":
-    st.write("### Aplikasi Regresi Linier")
+    st.write("### Aplikasi Regresi Linier 📉")
 
     # Input dari pengguna dengan titik sebagai pemisah desimal
     absorbansi = st.text_area("Masukkan nilai absorbansi (pisahkan dengan koma, gunakan titik untuk desimal):")
@@ -96,10 +133,10 @@ if opsi == "Penentuan Kurva Kalibrasi":
                     r = np.sqrt(r2)  # Koefisien determinasi
 
                     # Menampilkan hasil regresi
-                    st.write(f"### Hasil Regresi:")
-                    st.write(f"**Slope (Kemiringan):** {slope:.4f}")
-                    st.write(f"**Intercept:** {intercept:.4f}")
-                    st.write(f"**Koefisien Determinasi (R):** {r:.4f}")
+                    st.write(f"### Hasil Regresi 📊")
+                    st.write(f"<div class='jawaban'>Slope (Kemiringan): {slope:.4f}</div>", unsafe_allow_html=True)
+                    st.write(f"<div class='jawaban'>Intercept: {intercept:.4f}</div>", unsafe_allow_html=True)
+                    st.write(f"<div class='jawaban'>Koefisien Determinasi (R): {r:.4f}</div>", unsafe_allow_html=True)
 
                     # Data untuk plot
                     plot_data = pd.DataFrame({
@@ -109,7 +146,7 @@ if opsi == "Penentuan Kurva Kalibrasi":
                     })
 
                     # Plot menggunakan Streamlit
-                    st.write("### Plot Data dan Regresi:")
+                    st.write("### Plot Data dan Regresi 📈")
                     st.line_chart(plot_data.set_index('Konsentrasi'))
 
             except ValueError:
