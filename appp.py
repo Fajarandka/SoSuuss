@@ -42,7 +42,7 @@ if opsi == "Informasi Lanjut":
 if opsi == "Penentuan Panjang Gelombang":
     st.write("Penentuan Panjang Gelombang:")
     warna = st.selectbox("Pilih warna yang diobservasi:", ["Kuning-hijau", "Kuning", "Jingga", "Merah", "Ungu", "Biru", "Hijau-Biru", "Biru-Hijau"])
-    if warna == "kuning-hijau":
+    if warna == "Kuning-hijau":
         st.write("Panjang gelombang yang diabsorpsi: 400-435 nm")
     elif warna == "Kuning":
         st.write("Panjang gelombang yang diabsorpsi: 435-480 nm")
