@@ -58,7 +58,7 @@ if opsi == "Tentang Kami":
     st.write("Aplikasi ini juga merupakan hasil proyek kami dalam mata kuliah yang dijalankan. Kami berterima kasih atas pengertiannya.")
     
     # Tambahkan gambar sebelum anggota kelompok
-    st.image("/workspaces/SoSuuss/WhatsApp Image 2024-07-26 at 10.00.33_7cba7d76.jpg", caption="Gambar Anggota Kelompok", use_column_width=True)
+    st.image("WhatsApp Image 2024-07-26 at 10.00.33_7cba7d76.jpg", caption="Gambar Anggota Kelompok", use_column_width=True)
     st.write("### Anggota Kelompok:")
     st.write("1. Fajar Putra Andika")
     st.write("2. Inka Novebi Br Ginting")
@@ -72,7 +72,7 @@ if opsi == "Informasi Lanjut":
     st.write("### Informasi Lanjut:")
     
     # Tambahkan gambar sebelum penjelasan panjang gelombang
-    st.image("/workspaces/SoSuuss/Gelombang Cahaya Tampak.jpg", caption="Gambar untuk Panjang Gelombang", use_column_width=True)
+    st.image("Gelombang Cahaya Tampak.jpg", caption="Gambar untuk Panjang Gelombang", use_column_width=True)
     st.write("#### Panjang Gelombang")
     st.write("Panjang gelombang adalah jarak antara dua titik pada gelombang yang memiliki fase sama. Dalam spektrofotometer UV-Vis, panjang gelombang digunakan untuk mengidentifikasi warna yang dihasilkan oleh suatu senyawa.")
 
